@@ -16,10 +16,10 @@ leapcheck = leapyear()
 
 #months arrays
 month31 = [1, 3, 5, 7, 8, 10, 12]
-month31n = ["January", "March", "May", "July", "August", "October", "December"]
+# month31n = ["January", "March", "May", "July", "August", "October", "December"]
 
 month30 = [4, 6, 9, 11]
-month30n = ["April", "June", "September", "November"]
+# month30n = ["April", "June", "September", "November"]
 
 #check month length
 def monthlength(m):
@@ -41,8 +41,13 @@ daycount = 0
 for i in range(1,month):
     daycount += monthlength(i)
 
-#add the day of the current month
-daycount += day
-
-#print result
-print(daycount)
+#add the day of the current month and print
+if month == 2 and day > 29 and leapcheck == 1:
+    print("Incorrect Input")
+elif month == 2 and day > 28 and leapcheck == 0:
+    print("Incorrect Input")
+elif day <= 31 and month <= 12:
+    daycount += day
+    print(f"You are on day {daycount} of {year}")
+else:
+    print("Incorrect Input")
