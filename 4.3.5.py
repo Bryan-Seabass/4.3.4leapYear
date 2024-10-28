@@ -30,5 +30,7 @@ elif month in month30:
     print(month30n[month30.index(month)] + " has 30 days")
 elif month == 2 and leapcheck == 1:
     print(f"February has 29 days in {year}")
-else:
+elif month == 2 and leapcheck == 0:
     print(f"February has 28 days in {year}")
+else:
+    print("None")
